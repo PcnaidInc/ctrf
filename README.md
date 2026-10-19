@@ -41,3 +41,7 @@ Contributions are very welcome! <br/>
 ![CTRF Dashboard](./static/img/code.png)
 
 </div>
+
+## CI
+
+The [CI workflow](./.github/workflows/ci.yml) runs on every pull request and on pushes to `main`. It installs dependencies with `npm ci`, then runs the repository's existing `npm run typecheck` (`tsc`) and `npm run build` (`docusaurus build`) commands to catch type errors and ensure the docs site compiles. The workflow uses least-privilege `contents: read` permissions and cancels superseded runs via a concurrency group.
